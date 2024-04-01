@@ -64,6 +64,7 @@ const TestimonialSlider = () => {
               pellentesque.
             </p>
           </div>
+          
           <div>
             <div className="arrows flex gap-10 ">
               <div

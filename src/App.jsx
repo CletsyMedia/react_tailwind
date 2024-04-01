@@ -25,14 +25,14 @@ const App = () => {
         <Check />
         <Service />
         <Properties />
-
-        {/* 
-        
         <Teams />
         <Blog />
+        {/* 
+        
         <TestimonialSlider />
         <Banner/>
-        <Footers /> */}
+         */}
+         <Footers />
       </>
     </Router>
   );

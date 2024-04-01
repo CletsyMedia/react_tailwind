@@ -53,20 +53,20 @@ const Blog = () => {
   return (
     <>
       {/* Main Container */}
-      <div className="flex items-center justify-center flex-col gap-[10rem] bg-[#03AEFD] py-[7rem]">
+      <div className="flex items-center justify-center flex-col gap-[10rem] bg-[#03AEFD] py-[7rem] sm-max:pb-[0rem]">
         <div>
           {/* Trending Section */}
-          <div className="flex flex-col items-center justify-center mb-20">
+          <div className="flex flex-col items-center justify-center mb-20 ">
             <h3 className="tracking-[2px] font-medium text-white text-[20px]">
               WHAT'S TRENDING{" "}
             </h3>
-            <h2 className="text-[40px] text-white font-semibold">
+            <h2 className="text-[40px] text-white font-semibold sm-max:text-[30px]">
               Latest Blogs & Posts
             </h2>
           </div>
 
           {/* Slider Container */}
-          <div className="flex items-center justify-center w-[500px] gap-8">
+          <div className="flex items-center justify-center w-[500px] gap-8 sm-max:flex sm-max:flex-wrap sm-max:w-full">
             {/* Mapping through slides */}
             {currentSlides.map((slideIndex) => (
               <div key={slideIndex} className="relative mx-2">
@@ -79,11 +79,11 @@ const Blog = () => {
 
         {/* Slider Buttons */}
         <div className="sliders flex items-center justify-center gap-4 cursor-pointer">
-          <button onClick={handlePrevSlide} className="w-[100px] h-[4px] bg-[#ccc] rounded-full"></button>
+          <button onClick={handlePrevSlide} className="w-[100px] h-[4px] bg-[#ccc] rounded-full  sm-max:hidden"></button>
           
-          <button onClick={handleNextSlide} className={`w-[100px] h-[4px] bg-[#ccc] rounded-full ${currentSlides.includes(0) ? 'active' : ''}`}></button>
+          <button onClick={handleNextSlide} className={`w-[100px] h-[4px] bg-[#ccc] rounded-full  sm-max:hidden ${currentSlides.includes(0) ? 'active' : ''}`}></button>
 
-          <button onClick={handleNextSlide} className={`w-[100px] h-[4px] bg-[#ccc] rounded-full ${currentSlides.includes(1) ? 'active' : ''}`}></button>
+          <button onClick={handleNextSlide} className={`w-[100px] h-[4px] bg-[#ccc] rounded-full sm-max:hidden ${currentSlides.includes(1) ? 'active' : ''}`}></button>
         </div>
       </div>
     </>

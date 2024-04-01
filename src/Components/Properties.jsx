@@ -3,7 +3,7 @@ import './Properties.css'; // Assuming you have a CSS file named Properties.css 
 const Properties = () => {
   return (
     <>
-      <div className='py-[12rem] flex flex-col gap-10 relative sm-max:flex sm-max:items-center sm-max:justify-center'>
+      <div className='py-[12rem] flex flex-col gap-10 relative sm-max:flex sm-max:items-center sm-max:justify-center sm-max:pb-[3rem]'>
         <div className='absolute w-[50px] h-[50px] top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
           <img src="./who_elipse2.png" alt="" className='w-full h-full opacity-3'/>
         </div>
@@ -12,8 +12,8 @@ const Properties = () => {
           <h2 className='text-[#2B2B2B] text-[40px] font-semibold sm-max:text-[22px]'>Neighborhood Properties</h2>
         </div>
 
-        <div className="props_images flex flex-col flex-wrap  gap-10 py-10 sm-max:flex sm-max:mx-6">
-          <div className="flex flex-wrap items-center justify-center gap-10 sm-max:grid-cols-2 sm-max:gap-4 esm-max:grid esm-max:grid-cols-2">
+        <div className="">
+          <div className="flex flex-wrap items-center justify-center gap-10 sm-max:grid sm-max:grid-cols-2 sm-max:gap-4 esm-max:grid esm-max:grid-cols-2">
             <div className='prop-md w-[300px] h-[320px] rounded-[30px] relative sm-max:w-[155px] sm-max:h-[155px]'>
               <div className="overlay absolute inset-0 rounded-[30px] bg-black opacity-25"></div>
               <img src="./prop1.jpeg" alt="" className='w-full h-full bg-cover bg-center rounded-[30px]' />
@@ -60,13 +60,9 @@ const Properties = () => {
             </div>
           </div>
 
-          {/* <div className="flex items-center justify-center gap-10">
-            
-          </div> */}
-
         </div>
-        <div className='absolute w-[75px] h-[75px] bottom-14 right-[14rem] transform -translate-x-1/2 -translate-y-1/2'>
-          <img src="./propelipse.png" alt="" className='w-full h-full opacity-3'/>
+        <div className='absolute w-[75px] h-[75px] bottom-14 right-[14rem] transform -translate-x-1/2 -translate-y-1/2 sm-max:bottom-[7rem] sm-max:right-[8rem]'>
+          <img src="./propelipse.png" alt="" className='w-full h-full'/>
         </div>
       </div>
     </>

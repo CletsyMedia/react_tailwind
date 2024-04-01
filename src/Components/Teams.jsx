@@ -11,19 +11,20 @@ const Teams = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-col gap-[6rem] items-center justify-center mb-[10rem]">
+      <div className="flex flex-col gap-[6rem] items-center justify-center mb-[10rem] sm-max:gap-9">
         <div className="text-center">
           <h2 className="text-[rgb(67,97,238)] text-[15px] tracking-[1.25px] font-medium mb-2">
             INTRODUCE YOURSELF TO
           </h2>
-          <h2 className="text-[#2B2B2B] text-[32px] font-semibold">
+          <h2 className="text-[#2B2B2B] text-[32px] font-semibold sm-max:text-[24px]">
             Our Team Of Experts
           </h2>
         </div>
 
-        <div className="teams flex gap-14 ml-10" data-aos="zoom-in-left" >
+        <div className="teams flex gap-14 ml-10 sm-max:grid sm-max:grid-cols-2 sm-max:gap-4 sm-max:ml-0" data-aos="zoom-in-left" >
+
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="tesy w-[200px] h-[280px]  relative ">
+            <div className="tesy w-[200px] h-[280px]  relative sm-max:w-[140px] sm-max:h-[188px]">
               <div className="overlay absolute inset-0 rounded-[30px] bg-black opacity-30 rounded-tl-[100px]"></div>
               <img
                 src="./testy1.jpeg"
@@ -42,7 +43,7 @@ const Teams = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="tesy w-[200px] h-[280px]  relative ">
+            <div className="tesy w-[200px] h-[280px]  relative sm-max:w-[140px] sm-max:h-[188px]">
               <div className="overlay absolute inset-0 rounded-[30px] bg-black opacity-30 rounded-tl-[100px]"></div>
               <img
                 src="./testy2.jpeg"
@@ -61,7 +62,7 @@ const Teams = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="tesy w-[200px] h-[280px]  relative ">
+            <div className="tesy w-[200px] h-[280px]  relative sm-max:w-[140px] sm-max:h-[188px] ">
               <div className="overlay absolute inset-0 rounded-[30px] bg-black opacity-30 rounded-tl-[100px]"></div>
               <img
                 src="./testy3.jpeg"
@@ -80,7 +81,7 @@ const Teams = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="tesy w-[200px] h-[280px]  relative ">
+            <div className="tesy w-[200px] h-[280px]  relative sm-max:w-[140px] sm-max:h-[188px]">
               <div className="overlay absolute inset-0 rounded-[30px] bg-black opacity-30 rounded-tl-[100px]"></div>
               <img
                 src="./testy4.jpeg"

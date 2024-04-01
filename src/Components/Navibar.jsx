@@ -1,72 +1,92 @@
-import { Navbar } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from "react-scroll";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import "./Navibar.css";
+import { CiMenuBurger } from "react-icons/ci";
 
 const Navibar = () => {
+  const [showNavbar, setShowNavbar] = useState(false);
+
+  const toggleNavbar = () => {
+    setShowNavbar(!showNavbar);
+  };
+
   return (
-    <Navbar fluid className="navbars sticky top-0 z-[1000] bg-white lg:shadow-none sm-max:shadow">
-      <div className="navTop flex items-center justify-between w-full lg:px-[7rem] sm-max:px-[0]">
-        <Navbar.Collapse className="navLinks">
-          <Link className="links flex items-center justify-center lg:bg-[#4361EE4D] lg:rounded-3xl lg:px-4 hover:bg-[#03AEFD] hover:text-[#fff] sm-max:p-2 sm-max:flex sm-max:items-start sm-max:justify-start" to="#" active>
-            Home
-          </Link>
-          <Link className="links sm-max:p-2" to="#">
-            About
-          </Link>
-          <Link className="links sm-max:p-2" to="#">
-            Listing
-          </Link>
-          <Link className="links sm-max:p-2" to="#">
-            Services
-          </Link>
-          <Link className="links sm-max:p-2" to="#">
-            Blogs
-          </Link>
-          <div className="lg:hidden sm-max:flex sm-max:flex-col sm-max:items-start sm-max:justify-start sm-max:gap-6 sm-max:py-4">
-            <div className="flex items-center justify-center gap-2 font-Poppins font-[450] ">
-              <HiOutlineUserCircle />
-              <a href="">Login/Register</a>
+    <>
+      <header className="sticky z-[100] w-[100%] top-0 left-0 right-0 bg-white shadow lg:py-4 lg:px-[6rem] sm-max:px-0 sm-max:py-4 md:p-4">
+        <nav className="relative flex items-center justify-between">
+
+          <div className={`sm-max:absolute sm-max:w-[100%] sm-max:top-0 sm-max:left-0 sm-max:right-0 sm-max:top-[3rem] sm-max:bg-white sm-max:shadow ${showNavbar ? 'block' : 'hidden'} md:flex lg:flex`}>
+            <ul className="flex items-center justify-center gap-10  md-max:gap-4 sm-max:flex sm-max:flex-col sm-max:items-start  sm-max:py-4 sm-max:gap-2 sm-max:w-full">
+              <Link to="Home" className='hover:text-[#03AEFD] sm-max:hover:bg-[#03AEFD] sm-max:hover:text-white sm-max:w-full sm-max:py-2 sm-max:px-6'>
+                <li>Home</li>
+              </Link>
+              <Link to="About" className='hover:text-[#03AEFD] sm-max:hover:bg-[#03AEFD] sm-max:hover:text-white sm-max:w-full sm-max:py-2 sm-max:px-6'>
+                <li>About</li>
+              </Link>
+              <Link to="Listing" className='hover:text-[#03AEFD] sm-max:hover:bg-[#03AEFD] sm-max:hover:text-white sm-max:w-full sm-max:py-2 sm-max:px-6'>
+                <li>Listing</li>
+              </Link>
+              <Link to="Services" className='hover:text-[#03AEFD] sm-max:hover:bg-[#03AEFD] sm-max:hover:text-white sm-max:w-full sm-max:py-2 sm-max:px-6'>
+                <li>Services</li>
+              </Link>
+              <Link to="Blogs" className='hover:text-[#03AEFD] sm-max:hover:bg-[#03AEFD] sm-max:hover:text-white sm-max:w-full sm-max:py-2 sm-max:px-6'>
+                <li>Blogs</li>
+              </Link>
+            </ul>
+              <div className="flex">
+              <div className="lg:hidden md:hidden sm-max:flex sm-max:flex-col sm-max:items-center sm-max:justify-center gap-6 sm-max:px-6 sm-max:pb-[2rem]">
+                <div className="flex items-center justify-center gap-2 font-Poppins font-[450] hover:text-[#03AEFD]">
+                  <HiOutlineUserCircle />
+                  <a href="">Login/Register</a>
+                </div>
+                <div className="btn flex items-center justify-center gap-2 bg-[#03AEFD] px-6 py-2 rounded-full text-white cursor-pointer hover:scale-[1.05]">
+                  <img
+                    className="w-[16px] h-[16px]"
+                    src="./houselogo.png"
+                    alt="House Logo"
+                  />
+                  <a href="">Add Listing</a>
+                </div>
+              </div>
+              </div>
+
+          </div>
+
+          <div className="flex  items-center justify-center gap-3 sm-max:flex sm-max:items-start sm-max:justify-between sm-max:w-full sm-max:px-4">
+            <div className="house flex items-center justify-center gap-2 cursor-pointer">
+            <div className="flex items-center justify-center w-[40px] h-[40px] bg-[#03AEFD] rounded-full">
+                <img
+                  className="w-[16px] h-[16px]"
+                  src="./houselogo.png"
+                  alt="House Logo"
+                />
+              </div>
+              <p className="font-Poppins font-[600]">Rezilla</p>
             </div>
-            <div className="btn flex items-center justify-center gap-2 bg-[#03AEFD] px-6 py-2 rounded-full text-white cursor-pointer">
-              <img
-                className="w-[16px] h-[16px]"
-                src="./houselogo.png"
-                alt="House Logo"
-              />
-              <a href="">Add Listing</a>
+            <div className="lg:hidden md:hidden sm-max:flex sm-max:items-center sm-max:justify-center sm-max:w-[40px] sm-max:h-[40px] sm-max:bg-[#f5f3f3e2] sm-max:text-[20px] sm-max:rounded-[5px] sm-max:shadow cursor-pointer" onClick={toggleNavbar}>
+                <CiMenuBurger />
+              </div>
+          </div>
+
+          <div className="flex">
+            <div className="md-max:gap-4 md:flex items-center justify-center gap-6 sm-max:hidden">
+              <div className="flex items-center justify-center gap-2 font-Poppins font-[450]">
+                <HiOutlineUserCircle />
+                <a href="">Login/Register</a>
+              </div>
+              <div className="btn flex items-center justify-center gap-2 bg-[#03AEFD] px-6 py-2 rounded-full text-white cursor-pointer">
+                <img
+                  className="w-[16px] h-[16px]"
+                  src="./houselogo.png"
+                  alt="House Logo"
+                />
+                <a href="">Add Listing</a>
+              </div>
             </div>
           </div>
-        </Navbar.Collapse>
-        <div className="house flex items-center justify-center gap-2 cursor-pointer">
-          <div className="flex items-center justify-center w-[40px] h-[40px] bg-[#03AEFD] rounded-full">
-            <img
-              className="w-[16px] h-[16px]"
-              src="./houselogo.png"
-              alt="House Logo"
-            />
-          </div>
-          <p className="font-Poppins font-[600]">Rezilla</p>
-        </div>
-        <div className="flex md:order-2">
-          <div className="md:flex items-center justify-center gap-6 sm-max:hidden min-[320px]:hidden max-[900px]:flex">
-            <div className="flex items-center justify-center gap-2 font-Poppins font-[450] ">
-              <HiOutlineUserCircle />
-              <a href="">Login/Register</a>
-            </div>
-            <div className="btn flex items-center justify-center gap-2 bg-[#03AEFD] px-6 py-2 rounded-full text-white cursor-pointer">
-              <img
-                className="w-[16px] h-[16px]"
-                src="./houselogo.png"
-                alt="House Logo"
-              />
-              <a href="">Add Listing</a>
-            </div>
-          </div>
-        </div>
-        <Navbar.Toggle />
-      </div>
-    </Navbar>
+        </nav>
+      </header>
+    </>
   );
 };
 
